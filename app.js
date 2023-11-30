@@ -2,11 +2,13 @@ const express = require("express");
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
 const fs = require("fs");
+const cors = require("cors");
 
 require("dotenv").config();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/audio/upload", async (req, res) => {
